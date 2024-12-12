@@ -1,0 +1,214 @@
+// カラー変数の定義
+$bg-color: rgb(247, 247, 247);
+$primary-color: #6195ed;
+$secondary-color: #4a90e2;
+$bg-color: #f7f7f7;
+$spacing: 20px;
+
+
+body {
+  background-color: $bg-color;
+}
+
+.container {
+  width: 80%;
+  margin: 200px auto;
+  height: 1200px;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  place-items: center;
+  border: solid rgb(43, 0, 255);
+  border-radius: 20px;
+  background-color: #f0f8ff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  // グラデーションボーダー
+  border: 5px solid transparent;
+  border-image: linear-gradient(to right, #6195ed, #4a90e2) 1;
+  border-radius: 15px;
+
+  // シャドウ効果
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  // アニメーション効果
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    margin: 100px auto;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    margin: 50px auto;
+    padding: 10px;
+  }
+}
+.contant-box {
+  text-align: center;
+  margin: 2em auto;
+
+  span {
+    // 基本スタイル
+    font-size: 2.4rem;
+    letter-spacing: 0.1em;
+    position: relative;
+    display: inline-block;
+    padding: 0.5em 2em;
+
+    // 装飾効果
+    background: linear-gradient(transparent 70%, #e6f2ff 70%);
+    border-bottom: 2px solid #6195ed;
+
+    // アクセント
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border: 2px solid #6195ed;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+      border-right: 0;
+      border-bottom: 0;
+    }
+
+    &::after {
+      bottom: 0;
+      right: 0;
+      border-left: 0;
+      border-top: 0;
+    }
+  }
+}
+
+p{
+        font-size: 20px;
+}
+
+input:not([type="radio"]) {
+    width: 500px;
+    border: 5px solid transparent;
+    border-image: linear-gradient(to right, #6195ed, #4a90e2) 1;
+    padding: 12px;
+    transition: all 0.3s ease;
+    text-align: center; // テキストを中央寄せ
+    display: block; // ブロック要素として表示
+    margin: 0 auto; // 要素自体を中央寄せ
+    
+    &:focus {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+    }
+    
+    &::placeholder {
+        text-align: center; // プレースホルダーも中央寄せ
+    }
+}
+
+#number {
+    appearance: none;
+    width: 200px; // 30pxから変更
+    font-size: 1.15rem;
+    padding: 0.675em 6em 0.675em 1em;
+    background-color: #fff;
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    color: #000;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background-color: #f2f2f2;
+        border-color: #6195ed;
+    }
+    
+    &:focus {
+        outline: none;
+        border-color: #4a90e2;
+        box-shadow: 0 0 0 2px rgba(97, 149, 237, 0.2);
+    }
+}
+
+// カスタム矢印の追加
+.select-wrapper {
+    position: relative;
+    width: 30px;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #4a90e2;
+        pointer-events: none;
+    }
+}
+
+#send-botton {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#send-botton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #6195ed, #4a90e2);
+    z-index: -1;
+    transition: all 0.3s ease;
+    transform: scale(0);
+    transform-origin: bottom right;
+}
+
+#send-botton:hover::before {
+    transform: scale(1);
+    transform-origin: top left;
+}
+
+#send-botton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+// ボタンを包むコンテナのスタイル
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+
